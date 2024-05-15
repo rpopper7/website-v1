@@ -5,12 +5,14 @@ export default function Home() {
   return (
     <main className="text-center text-xs">
       <div>
-        <div className="my-40">
-          <div>Hi, I'm</div>
-          <h1 className="text-xl font-extrabold">Rebecca Popper</h1>
-          <div>A creative software engineer building interactive digital products.</div>
-          <h1 className="text-xl font-extrabold">Welcome to my portfolio!</h1>
-          <div>(Keep scrolling)</div>
+        <div className="flex justify-center items-center h-screen w-screen">
+          <div className="flex flex-col">
+            <div>Hi, I'm</div>
+            <h1 className="text-xl font-extrabold">Rebecca Popper</h1>
+            <div>A creative software engineer building interactive digital products.</div>
+            <h1 className="text-xl font-extrabold">Welcome to my portfolio!</h1>
+            <div>(Keep scrolling)</div>
+          </div>
         </div>
         <div className="mb-40 mx-5">
           <h2 className="uppercase tracking-widest mb-3">About Me</h2>
@@ -26,6 +28,7 @@ export default function Home() {
             <div className="flex-1">
               <div className="font-bold">Portfolio Website - You are here!</div>
               <p>A fully responsive React app made with NextJS, Tailwind CSS, and TypeScript, from scratch.</p>
+              <p>Currently a work in progress and getting weekly updates.</p>
             </div>
             <div className="flex-1">
               <a className="font-bold" href="https://github.com/rpopper7/layered-image-manipulator" target="_blank">Image Manipulator</a>
