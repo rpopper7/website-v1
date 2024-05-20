@@ -50,11 +50,13 @@ const DraggableItem = ({ text }) => {
     box.addEventListener('mousedown', onMouseDown);
     box.addEventListener('mouseup', onMouseUp);
     container.addEventListener('mousemove', onMouseMove);
-
+    container.addEventListener('mouseleave', onMouseUp);
+    
     return () => {
       box.removeEventListener('mousedown', onMouseDown);
       box.removeEventListener('mouseup', onMouseUp);
       container.removeEventListener('mousemove', onMouseMove);
+      container.removeEventListener('mouseleave', onMouseUp);
     };
   }, []);
 

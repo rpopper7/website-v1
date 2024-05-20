@@ -8,7 +8,6 @@ import DraggableItem from "./components/DraggableItem";
 export default function Home() {
   return (
     <main>
-      <h1>Hello World</h1>
       <Link href="/users/">Users</Link>
       <DraggableItem text={"test"} />
     </main>
