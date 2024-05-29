@@ -1,7 +1,7 @@
 'use client'; // render clientside not serverside for interactivity
 import React, { useEffect, useRef } from 'react';
 
-const DraggableItem = ({ slot }: { slot: ReactNode }) => {
+const DraggableArea = ({ slot }: { slot: ReactNode }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
 
@@ -71,4 +71,4 @@ const DraggableItem = ({ slot }: { slot: ReactNode }) => {
   );
 };
 
-export default DraggableItem;
+export default DraggableArea;

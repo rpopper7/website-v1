@@ -1,26 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import DraggableItem from "./components/DraggableItem";
+import DraggableArea from "./components/DraggableArea";
 
 /*homepage
 using link component prevents reloading of all
 assets in the network tab when going to link */
 
-const ComponentAsProp = () => {
+/*const ComponentAsProp = () => {
   return (
     <>
       <p>hello</p>
       <p>How are you?</p>
     </>
   );
-}
+}*/
 
 //
 //<Link href="/users/">Users</Link>
+//<DraggableArea slot={<ComponentAsProp />} />
 export default function Home() {
   return (
     <main>
-      <DraggableItem slot={<ComponentAsProp />} />
+      <DraggableArea />
     </main>
   );
 }
