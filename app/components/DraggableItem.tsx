@@ -1,18 +1,14 @@
-'use client'; // render clientside not serverside for interactivity
+'use client';
 import React, { useEffect, useRef } from 'react';
-import DraggableItem from "./DraggableItem";
 
-interface DraggableAreaProps {
-    slots: ReactNode[];
-    containRef: React.RefObject<HTMLDivElement>;
+interface DraggableItemProps {
+    slot: ReactNode;
+    containRef: React.RefObject<HTMLDivElement>
 }
 
-const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const DraggableItem: React.FC<DraggableItemProps> = ({ slot, containRef }) => {
   const boxRef = useRef<HTMLDivElement>(null);
-
   const isClicked = useRef<boolean>();
-
   const coordinates = useRef<{
       startX: number,
       startY: number,
@@ -25,16 +21,17 @@ const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
       lastY: 0
   });
 
-  /*useEffect(() => {
-    if (!boxRef.current || !containerRef.current) return;
+  useEffect(() => {
+    if (!boxRef.current || !containRef.current) return;
 
     const box = boxRef.current;
-    const container = containerRef.current;
+    const container = containRef.current;
 
     const onMouseDown = (e: MouseEvent) => {
       isClicked.current = true;
       coordinates.current.startX = e.clientX;
       coordinates.current.startY = e.clientY;
+      console.log('clicked');
     }
 
     const onMouseUp = (e: MouseEvent) => {
@@ -57,24 +54,20 @@ const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
     box.addEventListener('mouseup', onMouseUp);
     container.addEventListener('mousemove', onMouseMove);
     container.addEventListener('mouseleave', onMouseUp);
-    
+
     return () => {
       box.removeEventListener('mousedown', onMouseDown);
       box.removeEventListener('mouseup', onMouseUp);
       container.removeEventListener('mousemove', onMouseMove);
       container.removeEventListener('mouseleave', onMouseUp);
     };
-  }, []);*/
+  }, []);
 
   return (
-    <div>
-      <div ref={containerRef} className="box-container relative border border-black h-screen w-screen overflow-hidden bg-red-200">
-        {slots.map((slot, index) => (
-          <DraggableItem slot={slot} key={index} containRef={containerRef} />
-        ))}
-      </div>
+    <div ref={boxRef} className="box absolute top-0 left-0 bg-green-500 h-auto w-auto cursor-pointer">
+      {slot}
     </div>
   );
 };
 
-export default DraggableArea;
+export default DraggableItem;

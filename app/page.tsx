@@ -6,11 +6,19 @@ import DraggableArea from "./components/DraggableArea";
 using link component prevents reloading of all
 assets in the network tab when going to link */
 
-const ComponentAsProp = () => {
+const ComponentAsProp1 = () => {
   return (
     <>
       <p>hello</p>
       <p>How are you?</p>
+    </>
+  );
+}
+
+const ComponentAsProp2 = () => {
+  return (
+    <>
+      <p>Resume</p>
     </>
   );
 }
@@ -20,7 +28,12 @@ const ComponentAsProp = () => {
 export default function Home() {
   return (
     <main>
-      <DraggableArea slot={<ComponentAsProp />}/>
+      <DraggableArea 
+        slots={[
+          <ComponentAsProp1 />,
+          <ComponentAsProp2 />
+        ]}
+      />
     </main>
   );
 }
