@@ -62,8 +62,8 @@ const DraggableItem = ({ slot }: { slot: ReactNode }) => {
 
   return (
     <div className="main grid place-items-center h-screen w-screen">
-      <div ref={containerRef} className="container relative border border-black h-[800px] w-[800px] overflow-hidden">
-        <div ref={boxRef} className="box absolute top-0 left-0 bg-green-500 h-[60px] w-[60px] cursor-pointer">
+      <div ref={containerRef} className="box-container relative border border-black h-screen w-screen overflow-hidden">
+        <div ref={boxRef} className="box absolute top-0 left-0 bg-green-500 h-auto w-auto cursor-pointer">
           {slot}
         </div>
       </div>

@@ -8,14 +8,18 @@ assets in the network tab when going to link */
 
 const ComponentAsProp = () => {
   return (
-    <p>hello</p>
+    <>
+      <p>hello</p>
+      <p>How are you?</p>
+    </>
   );
 }
 
+//
+//<Link href="/users/">Users</Link>
 export default function Home() {
   return (
     <main>
-      <Link href="/users/">Users</Link>
       <DraggableItem slot={<ComponentAsProp />} />
     </main>
   );
