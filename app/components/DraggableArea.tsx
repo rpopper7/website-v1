@@ -1,5 +1,5 @@
-'use client'; // render clientside not serverside for interactivity
-import React, { useEffect, useRef } from 'react';
+"use client"; // render clientside not serverside for interactivity
+import React, { useEffect, useRef } from "react";
 import DraggableItem from "./DraggableItem";
 
 interface DraggableAreaProps {
@@ -14,15 +14,15 @@ const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
   const isClicked = useRef<boolean>();
 
   const coordinates = useRef<{
-    startX: number,
-    startY: number,
-    lastX: number,
-    lastY: number
+    startX: number;
+    startY: number;
+    lastX: number;
+    lastY: number;
   }>({
     startX: 0,
     startY: 0,
     lastX: 0,
-    lastY: 0
+    lastY: 0,
   });
 
   /*useEffect(() => {
@@ -68,7 +68,10 @@ const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
 
   return (
     <div>
-      <div ref={containerRef} className="box-container relative border border-black h-screen w-screen overflow-hidden bg-red-200">
+      <div
+        ref={containerRef}
+        className="box-container relative border border-black h-screen w-screen overflow-hidden bg-red-200"
+      >
         {slots.map((slot, index) => (
           <DraggableItem slot={slot} key={index} containRef={containerRef} />
         ))}
