@@ -2,23 +2,23 @@
 import React, { useEffect, useRef } from 'react';
 
 interface DraggableItemProps {
-    slot: ReactNode;
-    containRef: React.RefObject<HTMLDivElement>
+  slot: ReactNode;
+  containRef: React.RefObject<HTMLDivElement>
 }
 
 const DraggableItem: React.FC<DraggableItemProps> = ({ slot, containRef }) => {
   const boxRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>();
   const coordinates = useRef<{
-      startX: number,
-      startY: number,
-      lastX: number,
-      lastY: number
+    startX: number,
+    startY: number,
+    lastX: number,
+    lastY: number
   }>({
-      startX: 0,
-      startY: 0,
-      lastX: 0,
-      lastY: 0
+    startX: 0,
+    startY: 0,
+    lastX: 0,
+    lastY: 0
   });
 
   useEffect(() => {

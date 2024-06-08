@@ -28,7 +28,7 @@ const ComponentAsProp2 = () => {
 export default function Home() {
   return (
     <main>
-      <DraggableArea 
+      <DraggableArea
         slots={[
           <ComponentAsProp1 />,
           <ComponentAsProp2 />

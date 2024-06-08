@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import DraggableItem from "./DraggableItem";
 
 interface DraggableAreaProps {
-    slots: ReactNode[];
-    containRef: React.RefObject<HTMLDivElement>;
+  slots: ReactNode[];
+  containRef: React.RefObject<HTMLDivElement>;
 }
 
 const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
@@ -14,15 +14,15 @@ const DraggableArea: React.FC<DraggableAreaProps> = ({ slots, containRef }) => {
   const isClicked = useRef<boolean>();
 
   const coordinates = useRef<{
-      startX: number,
-      startY: number,
-      lastX: number,
-      lastY: number
+    startX: number,
+    startY: number,
+    lastX: number,
+    lastY: number
   }>({
-      startX: 0,
-      startY: 0,
-      lastX: 0,
-      lastY: 0
+    startX: 0,
+    startY: 0,
+    lastX: 0,
+    lastY: 0
   });
 
   /*useEffect(() => {
