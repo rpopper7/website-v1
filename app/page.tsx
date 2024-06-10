@@ -13,7 +13,7 @@ const ComponentAsProp1 = () => {
       <p>How are you?</p>
     </>
   );
-}
+};
 
 const ComponentAsProp2 = () => {
   return (
@@ -21,19 +21,14 @@ const ComponentAsProp2 = () => {
       <p>Resume</p>
     </>
   );
-}
+};
 
 //
 //<Link href="/users/">Users</Link>
 export default function Home() {
   return (
     <main>
-      <DraggableArea
-        slots={[
-          <ComponentAsProp1 />,
-          <ComponentAsProp2 />
-        ]}
-      />
+      <DraggableArea slots={[<ComponentAsProp1 />, <ComponentAsProp2 />]} />
     </main>
   );
 }
