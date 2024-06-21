@@ -3,10 +3,13 @@ import React, { useEffect, useRef } from "react";
 
 interface DraggableItemProps {
   slot: React.ReactNode;
-  containRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement>;
 }
 
-const DraggableItem: React.FC<DraggableItemProps> = ({ slot, containRef }) => {
+const DraggableItem: React.FC<DraggableItemProps> = ({
+  slot,
+  containerRef,
+}) => {
   const boxRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>();
   const coordinates = useRef<{
@@ -22,16 +25,15 @@ const DraggableItem: React.FC<DraggableItemProps> = ({ slot, containRef }) => {
   });
 
   useEffect(() => {
-    if (!boxRef.current || !containRef.current) return;
+    if (!boxRef.current || !containerRef.current) return;
 
     const box = boxRef.current;
-    const container = containRef.current;
+    const container = containerRef.current;
 
     const onMouseDown = (e: MouseEvent) => {
       isClicked.current = true;
       coordinates.current.startX = e.clientX;
       coordinates.current.startY = e.clientY;
-      console.log("clicked");
     };
 
     const onMouseUp = () => {

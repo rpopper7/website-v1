@@ -2,10 +2,6 @@
 //import Link from "next/link";
 import DraggableArea from "./components/DraggableArea";
 
-/*homepage
-using link component prevents reloading of all
-assets in the network tab when going to link */
-
 const ComponentAsProp1 = () => {
   return (
     <>
@@ -23,7 +19,7 @@ const ComponentAsProp2 = () => {
   );
 };
 
-//<Link href="/users/">Users</Link>
+//<Link href="/users/">Users</Link> - prevents reloading of all assets in network tab when going to link
 export default function Home() {
   return (
     <main>

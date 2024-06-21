@@ -4,7 +4,6 @@ import DraggableItem from "./DraggableItem";
 
 interface DraggableAreaProps {
   slots: React.ReactNode[];
-  containRef: React.RefObject<HTMLDivElement>;
 }
 
 const DraggableArea: React.FC<DraggableAreaProps> = ({ slots }) => {
@@ -17,7 +16,7 @@ const DraggableArea: React.FC<DraggableAreaProps> = ({ slots }) => {
         className="box-container relative border border-black h-screen w-screen overflow-hidden bg-red-200"
       >
         {slots.map((slot, index) => (
-          <DraggableItem slot={slot} key={index} containRef={containerRef} />
+          <DraggableItem slot={slot} key={index} containerRef={containerRef} />
         ))}
       </div>
     </div>
