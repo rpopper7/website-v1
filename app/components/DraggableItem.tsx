@@ -70,7 +70,7 @@ const DraggableItem: React.FC<DraggableItemProps> = ({
   return (
     <div
       ref={boxRef}
-      className="box absolute top-0 left-0 bg-green-500 h-auto w-auto cursor-pointer"
+      className="box absolute top-0 left-0 bg-red-500 h-auto w-auto cursor-pointer"
     >
       {slot}
     </div>
