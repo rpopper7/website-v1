@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+//import Image from "next/image";
+//import Link from "next/link";
 import DraggableArea from "./components/DraggableArea";
 
 /*homepage
@@ -23,7 +23,6 @@ const ComponentAsProp2 = () => {
   );
 };
 
-//
 //<Link href="/users/">Users</Link>
 export default function Home() {
   return (

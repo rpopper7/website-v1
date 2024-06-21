@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 
 interface DraggableItemProps {
-  slot: ReactNode;
+  slot: React.ReactNode;
   containRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -34,7 +34,7 @@ const DraggableItem: React.FC<DraggableItemProps> = ({ slot, containRef }) => {
       console.log("clicked");
     };
 
-    const onMouseUp = (e: MouseEvent) => {
+    const onMouseUp = () => {
       isClicked.current = false;
       coordinates.current.lastX = box.offsetLeft;
       coordinates.current.lastY = box.offsetTop;
